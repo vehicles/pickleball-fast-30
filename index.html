@@ -127,7 +127,7 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
-		.rules-card { background: #0f172a; border-left: 4px solid #0ea5e9; padding: 12px; font-size: 11px; line-height: 1.6; margin-top: 15px; border-radius: 0 8px 8px 0; color: #94a3b8; }
+		.rules-card { background: var(--fast-primary); border-left: 4px solid #0ea5e9; padding: 12px; font-size: 11px; line-height: 1.6; margin-top: 15px; border-radius: 0 8px 8px 0; color: var(--fast-primary); }
         /* BẢNG VINH DANH (PODIUM) */
         .podium-container {
             display: flex;
@@ -564,7 +564,7 @@ function renderMatchesUI() {
             <div class="match-header">${m.label} (Chạm ${targetScore} điểm)</div>
             ${controlHTML}
             <div class="wave-box">
-                <div><b>🎾 Đôi Đang Thi Đấu Trên Sân (Tự động đổi mỗi 5 điểm):</b></div>
+                <div><b>Đôi đang thi đấu:</b></div>
                 <div>• <b>${t1Name}:</b> <span class="wave-pair">${pair1}</span></div>
                 <div>• <b>${t2Name}:</b> <span class="wave-pair">${pair2}</span></div>
             </div>
