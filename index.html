@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>F30- Pickleball FAST Club</title>
+    <title>F30 - Pickleball FAST Club</title>
     <!-- Thư viện Firebase Realtime Database SDK -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
@@ -127,6 +127,7 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
+		.rules-card { background: #0f172a; border-left: 4px solid #0ea5e9; padding: 12px; font-size: 11px; line-height: 1.6; margin-top: 15px; border-radius: 0 8px 8px 0; color: #94a3b8; }
         /* BẢNG VINH DANH (PODIUM) */
         .podium-container {
             display: flex;
@@ -228,7 +229,7 @@
 
     <div class="nav-tabs">
         <button id="tabScheduleBtn" class="tab-btn active" onclick="switchTab('schedule')">📅 LỊCH THI ĐẤU</button>
-        <button id="tabTeamsBtn" class="tab-btn" onclick="switchTab('teams')">👥 DANH SÁCH VĐV & ĐỘI HÌNH</button>
+        <button id="tabTeamsBtn" class="tab-btn" onclick="switchTab('teams')">👥 DANH SÁCH</button>
         <button id="tabStandingsBtn" class="tab-btn" onclick="switchTab('standings')">🏆 BẢNG XẾP HẠNG</button>
     </div>
 
@@ -238,6 +239,13 @@
             <span>📅 LỊCH THI ĐẤU CHI TIẾT</span>
         </div>
         <div id="matchesContainer"></div>
+
+		<div class="rules-card">
+            <strong style="color: #f59e0b;">📋 LUẬT TÍNH ĐIỂM & XẾP HẠNG:</strong><br>
+            • Thi đấu Rally Scoring chạm 90 điểm (Đổi sân ở mốc 45 điểm).<br>
+            • Mốc 90 điểm áp dụng <i>Side-Out Match Point</i> (Đội Giao bóng mới được ăn điểm quyết định).<br>
+            • Tổng số điểm 5, 10, ... sẽ đổi VDV <br>            
+        </div>
     </div>
 
     <!-- TAB 2: QUẢN LÝ TEAM & BTC SETUP ĐỘNG -->
