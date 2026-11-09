@@ -10,14 +10,14 @@
         import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
         const firebaseConfig = {
-          apiKey: "AIzaSyBpEqXWixeZM0ecwr_yL13t9SGfseRtgEY",
-          authDomain: "pickleball-tct70.firebaseapp.com",
-          databaseURL: "https://pickleball-tct70-default-rtdb.asia-southeast1.firebasedatabase.app",
-          projectId: "pickleball-tct70",
-          storageBucket: "pickleball-tct70.firebasestorage.app",
-          messagingSenderId: "1015003889551",
-          appId: "1:1015003889551:web:609af4b91d27eb7a8a55fa",
-          measurementId: "G-CG8E9J8S2W"
+         apiKey: "AIzaSyBpEqXWixeZM0ecwr_yL13t9SGfseRtgEY",
+         authDomain: "pickleball-tct70.firebaseapp.com",
+         databaseURL: "https://pickleball-tct70-default-rtdb.asia-southeast1.firebasedatabase.app",
+         projectId: "pickleball-tct70",
+         storageBucket: "pickleball-tct70.firebasestorage.app",
+         messagingSenderId: "1015003889551",
+         appId: "1:1015003889551:web:609af4b91d27eb7a8a55fa",
+         measurementId: "G-CG8E9J8S2W"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -75,7 +75,7 @@
             background-color: var(--bg-body); 
             color: var(--text-main); 
         }
-		
+        
         .container { 
             max-width: 1100px; 
             margin: 0 auto; 
@@ -85,31 +85,12 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.04); 
             border: 1px solid #E5E2DC;
         }
-        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         
         .header-container { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 15px; border-bottom: 2px solid #eef7fc; padding-bottom: 10px; }
         .header-left { display: flex; align-items: center; gap: 15px; }
-        .header-logo img { max-height: 70px; width: auto; object-fit: contain; }
         .header-title h1 { color: #1a5276; margin: 0; font-size: 18px; text-align: left; }
         .header-title .subtitle { color: var(--fast-orange); font-weight: 700; font-size: 13px; margin-top: 3px; }
-		.header-title .info { color: var(--text-muted); font-size: 8px; margin-top: 2px; }
-        .header { 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-            border-bottom: 2px solid var(--fast-primary); 
-            padding-bottom: 12px; 
-            margin-bottom: 15px; 
-        }
-        .header-text h1 { 
-            color: var(--fast-primary); 
-            margin: 0; 
-            font-size: 18px; 
-            text-transform: uppercase;
-            font-weight: 800;
-        }
-        .header-text .subtitle { color: var(--fast-orange); font-weight: 700; font-size: 13px; margin-top: 3px; }
-        .header-text .info { color: var(--text-muted); font-size: 8px; margin-top: 2px; }
+        .header-title .info { color: var(--text-muted); font-size: 11px; margin-top: 2px; }
 
         .btn-auth { 
             background-color: #F1F5F9; color: #334155; border: 1px solid var(--border-color); 
@@ -134,7 +115,6 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
-		.rules-card { background: #EAE6DF; border-left: 4px solid #0ea5e9; padding: 12px; font-size: 11px; line-height: 1.6; margin-top: 15px; border-radius: 0 8px 8px 0; color: var(--fast-dark); }
         /* BẢNG VINH DANH (PODIUM) */
         .podium-container {
             display: flex;
@@ -191,43 +171,107 @@
 
         .player-input { width: 95%; padding: 4px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 11px; }
 
-        /* MATCH CARD CUỘN SÓNG */
+        /* NÂNG CẤP GIAO DIỆN MATCH CARD & THỂ THỨC MLP */
         .match-card {
-            border: 1px solid var(--border-color); background: #FAF9F6;
-            padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 15px;
+            border: 1px solid #D1D5DB; background: #FFFFFF;
+            padding: 18px; border-radius: 12px; text-align: center; margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        .match-header { font-weight: 700; font-size: 14px; color: var(--fast-dark); margin-bottom: 10px; }
+        .match-header { font-weight: 800; font-size: 16px; color: var(--fast-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
         
-        .score-control { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 12px 0; }
-        .btn-step { width: 40px; height: 40px; font-size: 20px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; color: white; }
+        .score-control { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 15px 0; }
+        .btn-step { width: 42px; height: 42px; font-size: 22px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .btn-minus { background: #EF4444; }
         .btn-plus { background: #10B981; }
-        .score-display { width: 60px; height: 40px; font-size: 24px; font-weight: bold; text-align: center; background: #FFF; border: 2px solid var(--fast-primary); border-radius: 8px; }
+        .score-display { width: 65px; height: 42px; font-size: 26px; font-weight: bold; text-align: center; background: #F8FAFC; border: 2px solid var(--fast-primary); border-radius: 8px; color: var(--fast-dark); }
 
+        /* KHUNG ĐÔI ĐANG THI ĐẤU NỔI BẬT */
         .wave-box {
-            background: #EAE6DF; padding: 10px; border-radius: 8px; margin-top: 10px;
-            font-size: 12px; line-height: 1.5; text-align: left;
+            background: linear-gradient(135deg, #F2EFE9 0%, #E8E2D5 100%);
+            border: 1px solid #DCD6CD;
+            padding: 14px 16px; 
+            border-radius: 10px; 
+            margin-top: 15px;
+            text-align: left;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
         }
-        .wave-pair { font-weight: bold; color: var(--fast-primary); }
+        .wave-box-title {
+            font-size: 13px; font-weight: 800; color: #1E293B; margin-bottom: 8px;
+            display: flex; align-items: center; gap: 6px; text-transform: uppercase;
+        }
+        .wave-line {
+            font-size: 14px;
+            padding: 4px 0;
+            color: #334155;
+        }
+        .wave-pair { 
+            font-weight: 800; 
+            color: var(--fast-primary); 
+            background: #FFFFFF;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid #CBD5E1;
+            display: inline-block;
+            margin-top: 2px;
+        }
 
-        .winner-tag { background: #10B981; color: white; font-weight: 700; padding: 6px; border-radius: 4px; font-size: 12px; margin-top: 8px; }
+        /* KHUNG THỂ THỨC THI ĐẤU (FONT TO, RÕ RÀNG) */
+        .rules-card-enhanced {
+            background: linear-gradient(135deg, #EAE6DF 0%, #DFD9CE 100%);
+            border: 2px solid var(--fast-primary);
+            padding: 18px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            color: #1E293B;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+        .rules-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--fast-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+        .rules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 15px;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+        .rules-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .rules-item span {
+            color: var(--fast-primary);
+            font-weight: bold;
+        }
+
+        .winner-tag { background: #10B981; color: white; font-weight: 800; padding: 8px; border-radius: 6px; font-size: 14px; margin-top: 12px; box-shadow: 0 2px 6px rgba(16,185,129,0.2); }
 
         @media (max-width: 600px) {
-            .header-text h1 { font-size: 15px; }
+            .header-title h1 { font-size: 15px; }
             .btc-config-row { flex-direction: column; align-items: flex-start; }
+            .rules-list { font-size: 14px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-	<div class="header-container">
+    <div class="header-container">
         <div class="header-left">            
             <div class="header-title">
-				<div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">FAST PICKLEBALL CLUB</div>
-	            <h1>GIẢI PICKLEBALL KỈ NIỆM 30 NĂM FAST</h1>
-	            <div class="subtitle">ĐẠI CHIẾN 3 MIỀN</div>
-	            <div class="info">📍 Sân Pickleball Quảng Bình | ⏰ Tập trung: 07h30</div>
+                <div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">FAST PICKLEBALL CLUB</div>
+                <h1>GIẢI PICKLEBALL KỈ NIỆM 30 NĂM FAST</h1>
+                <div class="subtitle">ĐẠI CHIẾN 3 MIỀN</div>
+                <div class="info">📍 Sân Pickleball Quảng Bình | ⏰ Tập trung: 07h30</div>
             </div>
         </div>
         <button id="authBtn" class="btn-auth" onclick="toggleAuthRole()">🔑 Khán giả</button>
@@ -242,18 +286,33 @@
     <!-- TAB 1: THI ĐẤU CUỘN SÓNG -->
     <div id="tabSchedule" class="tab-content">
         <div class="section-title">
-            <span>📅 LỊCH THI ĐẤU CHI TIẾT</span>
+            <span>📅 LỊCH THI ĐẤU CHI TIẾT & ĐÔI RA SÂN</span>
         </div>
         <div id="matchesContainer"></div>
 
-		<div class="section-title">            
-			<span>📋 THỂ THỨC THI ĐẤU:</span>            
-        </div>
-		<div class="wave-box">
-                <div>• Thi đấu Rally Scoring chạm 90 điểm (Đổi sân ở mốc 45 điểm)</div>
-                <div>• Tổng số điểm 5, 10, ... sẽ đổi VĐV. Thứ tự: 1-2 → 2-3 → 3-4 → ...</div>
-			    <div>• Mốc 90 điểm áp dụng <i>Side-Out Match Point</i> (Đội Giao bóng mới được ăn điểm quyết định)</div>
+        <!-- PHẦN THỂ THỨC THI ĐẤU MLP NÂNG CẤP (FONT TO, RÕ RÀNG, ĐẦY ĐỦ CHI TIẾT) -->
+        <div class="rules-card-enhanced">
+            <div class="rules-title">
+                <span>📋 ĐẶC SẢN THỂ THỨC M.L.P (MAJOR LEAGUE PICKLEBALL) CUỘN SÓNG</span>
             </div>
+            <div class="rules-list">
+                <div class="rules-item">
+                    <span>•</span> <strong>Đánh vòng tròn tính điểm trực tiếp:</strong> 3 đội (FHN - FĐN - FSG) tranh tài trực tiếp trên 1 sân duy nhất, đảm bảo tính kịch tính từ trận đầu đến trận cuối.
+                </div>
+                <div class="rules-item">
+                    <span>•</span> <strong>Thể thức Cuộn sóng (Wave Format):</strong> Các cặp đôi (Nam / Nữ / Hỗn hợp) trong danh sách 18 VĐV sẽ liên tục xoay vòng theo thứ tự <strong>1-2 → 2-3 → 3-4 → ...</strong>
+                </div>
+                <div class="rules-item">
+                    <span>•</span> <strong>Tự động đổi VĐV mỗi 5 điểm:</strong> Cứ đúng mốc tích lũy 5 điểm (5, 10, 15, 20...), hai đội bắt buộc phải thay người ngay lập tức theo đúng vòng cuốn chiếu.
+                </div>
+                <div class="rules-item">
+                    <span>•</span> <strong>Mục tiêu chiến thắng:</strong> Đội nào tích lũy tổng điểm chạm mốc <strong>90 điểm trước</strong> sẽ giành chiến thắng chung cuộc của trận đấu!
+                </div>
+                <div class="rules-item">
+                    <span>•</span> <strong>Luật Match Point (Chạm 90):</strong> Ở điểm số quyết định chạm 90, áp dụng luật <i>Side-Out Match Point</i> (chỉ đội đang giữ quyền giao bóng mới được tính điểm kết thúc trận).
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- TAB 2: QUẢN LÝ TEAM & BTC SETUP ĐỘNG -->
@@ -274,7 +333,7 @@
             </div>
         </div>
 
-        <div class="section-title">👥 DANH SÁCH SẮP XẾP VĐV</div>
+        <div class="section-title">👥 DANH SÁCH SẮP XẾP VĐV (18 VĐV / TEAM)</div>
         <div id="teamsAdminGrid" class="teams-grid"></div>
     </div>
 
@@ -283,7 +342,7 @@
         <div class="section-title">🏅 BẢNG VINH DANH</div>
         <div id="podiumContainer" class="podium-container"></div>
 
-        <div class="section-title">🏆 BẢNG XẾP HẠNG</div>
+        <div class="section-title">🏆 BẢNG XẾP HẠNG TỔNG QUAN</div>
         <table>
             <thead>
                 <tr>
@@ -491,28 +550,15 @@ function renderTeamsAdminUI() {
     });
 }
 
-// CÔNG THỨC TÍNH ĐÔI THI ĐẤU CUỘN SÓNG: DỰA VÀO SỐ ĐIỂM HIỆN TẠI ĐỂ TỰ ĐỘNG ĐỔI VĐV MỖI 5 ĐIỂM
+// CÔNG THỨC TÍNH ĐÔI THI ĐẤU CUỘN SÓNG
 function getCurrentWavePair(teamKey, waveIndex) {
-
     const team = teamsData[teamKey];
-
     if (!team || !team.members || team.members.length === 0) {
         return "Chưa xếp";
     }
-
     const N = team.members.length;
-
-    // Cuộn sóng:
-    // 1-2
-    // 2-3
-    // 3-4
-    // ...
-    // 18-1
-    // 1-2
-
     const p1Idx = waveIndex % N;
     const p2Idx = (waveIndex + 1) % N;
-
     return `${team.members[p1Idx].name} & ${team.members[p2Idx].name}`;
 }
 
@@ -534,19 +580,16 @@ function renderMatchesUI() {
         const t1Name = teamsData[m.team1] ? teamsData[m.team1].name : m.team1;
         const t2Name = teamsData[m.team2] ? teamsData[m.team2].name : m.team2;
 
-        // Tổng điểm của trận
-		const totalScore = (mData.score1 || 0) + (mData.score2 || 0);
+        const totalScore = (mData.score1 || 0) + (mData.score2 || 0);
+        const waveIndex = Math.floor(totalScore / WAVE_INTERVAL);
 
-		// Mỗi 5 điểm đổi người 1 lần
-		const waveIndex = Math.floor(totalScore / WAVE_INTERVAL);
-
-		const pair1 = getCurrentWavePair(m.team1, waveIndex);
-		const pair2 = getCurrentWavePair(m.team2, waveIndex);
+        const pair1 = getCurrentWavePair(m.team1, waveIndex);
+        const pair2 = getCurrentWavePair(m.team2, waveIndex);
 
         let winnerText = '';
         if (mData.finished || mData.score1 >= targetScore || mData.score2 >= targetScore) {
-            if (mData.score1 > mData.score2) winnerText = `<div class="winner-tag">🏆 THẮNG: ${t1Name} (${mData.score1} - ${mData.score2})</div>`;
-            else if (mData.score2 > mData.score1) winnerText = `<div class="winner-tag">🏆 THẮNG: ${t2Name} (${mData.score2} - ${mData.score1})</div>`;
+            if (mData.score1 > mData.score2) winnerText = `<div class="winner-tag">🏆 THẮNG CUỘC: ${t1Name} (${mData.score1} - ${mData.score2})</div>`;
+            else if (mData.score2 > mData.score1) winnerText = `<div class="winner-tag">🏆 THẮNG CUỘC: ${t2Name} (${mData.score2} - ${mData.score1})</div>`;
             else winnerText = `<div class="winner-tag" style="background:#E67E22;">🤝 HÒA (${mData.score1} - ${mData.score2})</div>`;
         }
 
@@ -555,26 +598,26 @@ function renderMatchesUI() {
                 <button class="btn-step btn-minus" onclick="adjustScore('${m.key}', 1, -1)" ${mData.finished ? 'disabled' : ''}>-</button>
                 <input type="number" class="score-display" value="${mData.score1}" onchange="updateMatchScore('${m.key}', 1, this.value)" ${mData.finished ? 'disabled' : ''}>
                 <button class="btn-step btn-plus" onclick="adjustScore('${m.key}', 1, 1)" ${mData.finished ? 'disabled' : ''}>+</button>
-                <span style="font-size:22px; font-weight:bold; margin:0 10px;">-</span>
+                <span style="font-size:24px; font-weight:bold; margin:0 8px; color:var(--text-muted);">:</span>
                 <button class="btn-step btn-minus" onclick="adjustScore('${m.key}', 2, -1)" ${mData.finished ? 'disabled' : ''}>-</button>
                 <input type="number" class="score-display" value="${mData.score2}" onchange="updateMatchScore('${m.key}', 2, this.value)" ${mData.finished ? 'disabled' : ''}>
                 <button class="btn-step btn-plus" onclick="adjustScore('${m.key}', 2, 1)" ${mData.finished ? 'disabled' : ''}>+</button>
             </div>
-            <div>
-                <button style="background:var(--fast-primary); color:white; border:none; padding:6px 12px; border-radius:4px; font-weight:bold; cursor:pointer;" onclick="toggleFinish('${m.key}')">${mData.finished ? 'Mở Lại' : 'Chốt Trận'}</button>
-                <button style="background:#64748B; color:white; border:none; padding:6px 12px; border-radius:4px; font-weight:bold; cursor:pointer; margin-left:5px;" onclick="resetMatch('${m.key}')">Reset</button>
+            <div style="margin-top: 10px;">
+                <button style="background:var(--fast-primary); color:white; border:none; padding:8px 16px; border-radius:6px; font-weight:bold; cursor:pointer;" onclick="toggleFinish('${m.key}')">${mData.finished ? '🔓 Mở Lại Trận' : '🔒 Chốt Trận Đấu'}</button>
+                <button style="background:#64748B; color:white; border:none; padding:8px 16px; border-radius:6px; font-weight:bold; cursor:pointer; margin-left:8px;" onclick="resetMatch('${m.key}')">🔄 Reset</button>
             </div>
-        ` : `<div style="font-size:28px; font-weight:bold; color:var(--fast-orange); margin:10px 0;">${mData.score1} - ${mData.score2}</div>`;
+        ` : `<div style="font-size:32px; font-weight:900; color:var(--fast-orange); margin:12px 0; letter-spacing: 2px;">${mData.score1} — ${mData.score2}</div>`;
 
         const card = document.createElement('div');
         card.className = 'match-card';
         card.innerHTML = `
-            <div class="match-header">${m.label} (Chạm ${targetScore} điểm)</div>
+            <div class="match-header">${m.label}</div>
             ${controlHTML}
             <div class="wave-box">
-                <div><b>Đôi đang thi đấu:</b></div>
-                <div>• <b>${t1Name}:</b> <span class="wave-pair">${pair1}</span></div>
-                <div>• <b>${t2Name}:</b> <span class="wave-pair">${pair2}</span></div>
+                <div class="wave-box-title">🏓 CẶP ĐÔI ĐANG RA SÂN (BLOCK HIỆN TẠI):</div>
+                <div class="wave-line">• <b>${t1Name}:</b> <span class="wave-pair">${pair1}</span></div>
+                <div class="wave-line" style="margin-top: 6px;">• <b>${t2Name}:</b> <span class="wave-pair">${pair2}</span></div>
             </div>
             ${winnerText}
         `;
