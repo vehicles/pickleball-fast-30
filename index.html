@@ -34,7 +34,7 @@
             } else {
                 initDefaultMatches();
             }
-            renderMatchesUI();
+            tchesUI();
             updateStandings();
         });
 
@@ -50,7 +50,7 @@
                 initDefaultTeamsData();
             }
             renderTeamsAdminUI();
-            renderMatchesUI();
+            tchesUI();
             updateStandings();
         });
     </script>
@@ -440,7 +440,7 @@ function updateAccessUI() {
     btcEls.forEach(el => el.style.display = (currentRole === 'btc') ? '' : 'none');
 
     renderTeamsAdminUI();
-    renderMatchesUI();
+    tchesUI();
 }
 
 function switchTab(tab) {
@@ -482,7 +482,7 @@ function updateDynamicConfig() {
     });
 
     renderTeamsAdminUI();
-    renderMatchesUI();
+    tchesUI();
 }
 
 function saveConfigToFirebase() {
@@ -502,7 +502,7 @@ function updateMemberName(tKey, idx, newName) {
     if (teamsData[tKey] && teamsData[tKey].members[idx]) {
         teamsData[tKey].members[idx].name = newName.trim();
     }
-    renderMatchesUI();
+    tchesUI();
 }
 
 function renderTeamsAdminUI() {
@@ -575,8 +575,12 @@ function renderMatchesUI() {
 
     matchList.forEach(m => {
         const mData = matchesData[m.key] || { score1: 0, score2: 0, finished: false };
-        const t1Name = teamsData[m.team1] ? teamsData[m.team1].name : m.team1;
-        const t2Name = teamsData[m.team2] ? teamsData[m.team2].name : m.team2;
+        
+        // Lấy tên Team và loại bỏ phần chữ trong ngoặc nhọn/ngoặc đơn (VD: "Team FHN (Hà Nội)" -> "Team FHN")
+        const rawT1Name = teamsData[m.team1] ? teamsData[m.team1].name : m.team1;
+        const rawT2Name = teamsData[m.team2] ? teamsData[m.team2].name : m.team2;
+        const t1Name = rawT1Name.replace(/\s*\(.*?\)/g, '').trim();
+        const t2Name = rawT2Name.replace(/\s*\(.*?\)/g, '').trim();
 
         const totalScore = (mData.score1 || 0) + (mData.score2 || 0);
         const waveIndex = Math.floor(totalScore / WAVE_INTERVAL);
