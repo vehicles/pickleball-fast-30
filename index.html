@@ -133,39 +133,37 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        /* KHẮC PHỤC LỖI GIAO DIỆN BẢNG VINH DANH (PODIUM) */
-        .podium-container {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            gap: 15px;
-            margin: 15px 0 20px 0;
-            padding: 15px;
-            background: #F2EFE9;
-            border: 1px solid #E2DDD5;
-            border-radius: 12px;
-            flex-wrap: wrap;
-        }
-        .podium-card {
-            flex: 1;
-            min-width: 160px;
-            max-width: 260px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-radius: 10px;
-            padding: 14px 10px;
-            text-align: center;
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-        }
-        .podium-rank { font-size: 26px; margin-bottom: 4px; }
-        .podium-1 { order: 2; border: 2px solid #F59E0B; transform: scale(1.02); background: #FFFDF9; }
-        .podium-2 { order: 1; border: 2px solid #94A3B8; }
-        .podium-3 { order: 3; border: 2px solid #D97706; }
-        .podium-name { font-weight: 800; font-size: 14px; color: var(--text-main); margin-top: 4px; word-break: break-word; }
-        .podium-score { font-size: 12px; color: var(--text-muted); margin-top: 4px; font-weight: 600; }
+        /* BẢNG VINH DANH (PODIUM) - CÂN ĐỐI VỪA MẮT */
+		.podium-container {
+		    display: flex;
+		    justify-content: center;
+		    align-items: flex-end;
+		    gap: 12px;
+		    margin: 15px 0 20px 0;
+		    padding: 15px;
+		    background: #F2EFE9;
+		    border: 1px solid #E2DDD5;
+		    border-radius: 12px;
+		}
+		.podium-card {
+		    width: 28%; /* Thu gọn lại để không bị quá to */
+		    max-width: 190px;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    border-radius: 10px;
+		    padding: 10px 6px;
+		    text-align: center;
+		    background: #FFFFFF;
+		    border: 1px solid var(--border-color);
+		    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+		}
+		.podium-rank { font-size: 22px; margin-bottom: 2px; }
+		.podium-1 { order: 2; border: 2px solid #F59E0B; transform: scale(1.04); background: #FFFDF9; z-index: 2; }
+		.podium-2 { order: 1; border: 2px solid #94A3B8; }
+		.podium-3 { order: 3; border: 2px solid #D97706; }
+		.podium-name { font-weight: 700; font-size: 12px; color: var(--text-main); margin-top: 3px; word-break: break-word; }
+		.podium-score { font-size: 10px; color: var(--text-muted); margin-top: 2px; font-weight: 600; }
 
         /* KHU VỰC BTC SETUP ĐỘNG */
         .btc-panel {
@@ -274,7 +272,7 @@
                 <div style="font-size: 10px; color: var(--text-muted); font-weight: 700;">FAST PICKLEBALL CLUB</div>
                 <h1>GIẢI PICKLEBALL KỈ NIỆM 30 NĂM FAST</h1>
                 <div class="subtitle">ĐẠI CHIẾN 3 MIỀN</div>
-                <div class="info">📍 Sân Quảng Bình | ⏰ 07h30</div>
+                <div class="info">📍 Sân Quảng Bình | ⏰ 07h30, ngày /  /    </div>
             </div>
         </div>
         <button id="authBtn" class="btn-auth" onclick="toggleAuthRole()">🔑 Khán giả</button>
@@ -295,20 +293,20 @@
 
         <div class="rules-card-enhanced">
             <div class="rules-title">
-                <span>📋 ĐẶC SẢN THỂ THỨC M.L.P (MAJOR LEAGUE PICKLEBALL) CUỘN SÓNG</span>
+                <span>📋 THỂ THỨC MLP</span>
             </div>
             <div class="rules-list">
                 <div class="rules-item">
                     <span>•</span> <strong>Vòng tròn tính điểm:</strong> 3 đội (FHN - FĐN - FSG) tranh tài trực tiếp trên 1 sân duy nhất, đảm bảo tính kịch tính từ trận đầu đến trận cuối.
                 </div>
                 <div class="rules-item">
-                    <span>•</span> <strong>Thể thức Cuộn sóng:</strong> Các cặp đôi (Nam/Nữ/Hỗn hợp) trong danh sách 18 VĐV sẽ liên tục xoay vòng theo thứ tự <strong>1-2 → 2-3 → 3-4 → ...</strong>
+                    <span>•</span> <strong>Thể thức Cuộn sóng:</strong> Các cặp đôi (Nam/Nữ/Hỗn hợp) trong danh sách 18 VĐV sẽ liên tục xoay vòng theo thứ tự 1-2 → 2-3 → 3-4 → ...
                 </div>
                 <div class="rules-item">
                     <span>•</span> <strong>Đổi VĐV mỗi 5 điểm:</strong> Cứ đúng mốc tích lũy 5 điểm (5, 10, 15, 20...), hai đội bắt buộc phải thay người ngay lập tức theo đúng vòng cuốn chiếu.
                 </div>
                 <div class="rules-item">
-                    <span>•</span> <strong>Mục tiêu chiến thắng:</strong> Đội nào tích lũy tổng điểm chạm mốc <strong>90 điểm trước</strong> sẽ giành chiến thắng chung cuộc của trận đấu!
+                    <span>•</span> <strong>Mục tiêu chiến thắng:</strong> Đội nào tích lũy tổng điểm chạm mốc 90 điểm trước sẽ giành chiến thắng chung cuộc của trận đấu!
                 </div>
                 <div class="rules-item">
                     <span>•</span> <strong>Match Point (Chạm 90):</strong> Ở điểm số quyết định chạm 90, chỉ đội giữ quyền giao bóng mới được tính điểm kết thúc.
@@ -395,9 +393,9 @@ function initDefaultTeamsData() {
     };
 
     teamsData = {
-        FHN: { name: "Team FHN (Hà Nội)", members: createMembers("FHN") },
-        FDN: { name: "Team FĐN (Đà Nẵng)", members: createMembers("FDN") },
-        FSG: { name: "Team FSG (Sài Gòn)", members: createMembers("FSG") }
+        FHN: { name: "Team FHN", members: createMembers("FHN") },
+        FDN: { name: "Team FĐN", members: createMembers("FDN") },
+        FSG: { name: "Team FSG", members: createMembers("FSG") }
     };
 }
 
@@ -723,19 +721,19 @@ function updateStandings() {
         podiumContainer.innerHTML = `
             <div class="podium-card podium-2">
                 <div class="podium-rank">🥈</div>
-                <div style="font-size: 11px; color:var(--text-muted); font-weight:bold;">Á QUÂN</div>
+                <div style="font-size: 10px; color:var(--text-muted); font-weight:bold;">Á QUÂN</div>
                 <div class="podium-name">${standingsArr[1] ? standingsArr[1].name : 'Team FĐN'}</div>
                 <div class="podium-score">${standingsArr[1] ? standingsArr[1].won : 0} Thắng | HS: ${standingsArr[1] ? (standingsArr[1].diff > 0 ? '+' + standingsArr[1].diff : standingsArr[1].diff) : 0}</div>
             </div>
             <div class="podium-card podium-1">
                 <div class="podium-rank">🥇</div>
-                <div style="font-size: 11px; color:var(--fast-orange); font-weight:bold;">VÔ ĐỊCH</div>
+                <div style="font-size: 10px; color:var(--fast-orange); font-weight:bold;">VÔ ĐỊCH</div>
                 <div class="podium-name">${standingsArr[0] ? standingsArr[0].name : 'Team FHN'}</div>
                 <div class="podium-score">${standingsArr[0] ? standingsArr[0].won : 0} Thắng | HS: ${standingsArr[0] ? (standingsArr[0].diff > 0 ? '+' + standingsArr[0].diff : standingsArr[0].diff) : 0}</div>
             </div>
             <div class="podium-card podium-3">
                 <div class="podium-rank">🥉</div>
-                <div style="font-size: 11px; color:#D97706; font-weight:bold;">HẠNG BA</div>
+                <div style="font-size: 10px; color:#D97706; font-weight:bold;">HẠNG BA</div>
                 <div class="podium-name">${standingsArr[2] ? standingsArr[2].name : 'Team FSG'}</div>
                 <div class="podium-score">${standingsArr[2] ? standingsArr[2].won : 0} Thắng | HS: ${standingsArr[2] ? (standingsArr[2].diff > 0 ? '+' + standingsArr[2].diff : standingsArr[2].diff) : 0}</div>
             </div>
