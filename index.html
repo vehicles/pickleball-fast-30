@@ -87,7 +87,23 @@
         }
         
         .header-container { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 15px; border-bottom: 2px solid #eef7fc; padding-bottom: 10px; }
-        .header-left { display: flex; align-items: center; gap: 15px; }
+        .header-left { display: flex; align-items: center; gap: 12px; }
+        
+        /* XỬ LÝ KÍCH THƯỚC LOGO RESPONSIVE CHO MÁY TÍNH & ĐIỆN THOẠI */
+        .logo-container img {
+            object-fit: contain;
+            display: block;
+        }
+        .logo-desktop {
+            height: 50px; /* Chiều cao chuẩn trên Desktop */
+            width: auto;
+        }
+        .logo-mobile {
+            display: none; /* Mặc định ẩn trên Desktop */
+            height: 38px;  /* Chiều cao gọn gàng trên Mobile */
+            width: auto;
+        }
+
         .header-title h1 { color: #1a5276; margin: 0; font-size: 18px; text-align: left; }
         .header-title .subtitle { color: var(--fast-orange); font-weight: 700; font-size: 13px; margin-top: 3px; }
         .header-title .info { color: var(--text-muted); font-size: 11px; margin-top: 2px; }
@@ -171,7 +187,7 @@
 
         .player-input { width: 95%; padding: 4px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 11px; }
 
-        /* NÂNG CẤP GIAO DIỆN MATCH CARD & THỂ THỨC MLP */
+        /* MATCH CARD & THỂ THỨC MLP */
         .match-card {
             border: 1px solid #D1D5DB; background: #FFFFFF;
             padding: 18px; border-radius: 12px; text-align: center; margin-bottom: 20px;
@@ -185,7 +201,6 @@
         .btn-plus { background: #10B981; }
         .score-display { width: 65px; height: 42px; font-size: 26px; font-weight: bold; text-align: center; background: #F8FAFC; border: 2px solid var(--fast-primary); border-radius: 8px; color: var(--fast-dark); }
 
-        /* KHUNG ĐÔI ĐANG THI ĐẤU NỔI BẬT */
         .wave-box {
             background: linear-gradient(135deg, #F2EFE9 0%, #E8E2D5 100%);
             border: 1px solid #DCD6CD;
@@ -199,63 +214,33 @@
             font-size: 13px; font-weight: 800; color: #1E293B; margin-bottom: 8px;
             display: flex; align-items: center; gap: 6px; text-transform: uppercase;
         }
-        .wave-line {
-            font-size: 14px;
-            padding: 4px 0;
-            color: #334155;
-        }
+        .wave-line { font-size: 14px; padding: 4px 0; color: #334155; }
         .wave-pair { 
-            font-weight: 800; 
-            color: var(--fast-primary); 
-            background: #FFFFFF;
-            padding: 2px 8px;
-            border-radius: 4px;
-            border: 1px solid #CBD5E1;
-            display: inline-block;
-            margin-top: 2px;
+            font-weight: 800; color: var(--fast-primary); background: #FFFFFF;
+            padding: 2px 8px; border-radius: 4px; border: 1px solid #CBD5E1;
+            display: inline-block; margin-top: 2px;
         }
 
-        /* KHUNG THỂ THỨC THI ĐẤU (FONT TO, RÕ RÀNG) */
         .rules-card-enhanced {
             background: linear-gradient(135deg, #EAE6DF 0%, #DFD9CE 100%);
             border: 2px solid var(--fast-primary);
-            padding: 18px 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-            color: #1E293B;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            padding: 18px 20px; border-radius: 12px; margin-top: 20px;
+            color: #1E293B; box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
         .rules-title {
-            font-size: 16px;
-            font-weight: 900;
-            color: var(--fast-dark);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
+            font-size: 16px; font-weight: 900; color: var(--fast-dark); margin-bottom: 12px;
+            display: flex; align-items: center; gap: 8px; text-transform: uppercase;
         }
-        .rules-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            font-size: 15px;
-            line-height: 1.6;
-            font-weight: 600;
-        }
-        .rules-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-        }
-        .rules-item span {
-            color: var(--fast-primary);
-            font-weight: bold;
-        }
+        .rules-list { display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.6; font-weight: 600; }
+        .rules-item { display: flex; align-items: flex-start; gap: 8px; }
+        .rules-item span { color: var(--fast-primary); font-weight: bold; }
 
         .winner-tag { background: #10B981; color: white; font-weight: 800; padding: 8px; border-radius: 6px; font-size: 14px; margin-top: 12px; box-shadow: 0 2px 6px rgba(16,185,129,0.2); }
 
-        @media (max-width: 600px) {
+        /* Media Query cho Mobile tự động đổi logo */
+        @media (max-width: 768px) {
+            .logo-desktop { display: none; }
+            .logo-mobile { display: block; }
             .header-title h1 { font-size: 15px; }
             .btc-config-row { flex-direction: column; align-items: flex-start; }
             .rules-list { font-size: 14px; }
@@ -267,6 +252,14 @@
 <div class="container">
     <div class="header-container">
         <div class="header-left">            
+            <!-- KHU VỰC HIỂN THỊ LOGO BASE64 -->
+            <div class="logo-container">
+                <!-- Logo dùng cho máy tính (Desktop) -->
+                <img src="data:image/png;base64,THAY_CHUỖI_BASE64_DESKTOP_VÀO_ĐÂY" class="logo-desktop" alt="FAST Logo">
+                <!-- Logo dùng cho điện thoại (Mobile) - Có thể dùng chung hoặc logo thu gọn -->
+                <img src="data:image/png;base64,THAY_CHUỖI_BASE64_MOBILE_VÀO_ĐÂY" class="logo-mobile" alt="FAST Logo Mobile">
+            </div>
+
             <div class="header-title">
                 <div style="font-size: 11px; color: var(--text-muted); font-weight: 700;">FAST PICKLEBALL CLUB</div>
                 <h1>GIẢI PICKLEBALL KỈ NIỆM 30 NĂM FAST</h1>
@@ -290,7 +283,6 @@
         </div>
         <div id="matchesContainer"></div>
 
-        <!-- PHẦN THỂ THỨC THI ĐẤU MLP NÂNG CẤP (FONT TO, RÕ RÀNG, ĐẦY ĐỦ CHI TIẾT) -->
         <div class="rules-card-enhanced">
             <div class="rules-title">
                 <span>📋 ĐẶC SẢN THỂ THỨC M.L.P (MAJOR LEAGUE PICKLEBALL)</span>
@@ -317,7 +309,6 @@
 
     <!-- TAB 2: QUẢN LÝ TEAM & BTC SETUP ĐỘNG -->
     <div id="tabTeams" class="tab-content" style="display: none;">
-        <!-- KHU VỰC BTC CONFIG ĐỘNG -->
         <div class="btc-only btc-panel" style="display: none;">
             <div style="font-weight: bold; color: var(--fast-primary); margin-bottom: 10px;">⚙️ THIẾT LẬP CẤU HÌNH ĐỘNG (DÀNH CHO BTC)</div>
             <div class="btc-config-row">
@@ -366,7 +357,7 @@ let currentRole = "guest";
 
 let teamSize = 18;
 let targetScore = 90;
-const WAVE_INTERVAL = 5; // Cứ mỗi 5 điểm tự động đổi tên VĐV
+const WAVE_INTERVAL = 5;
 
 let teamsData = {};
 let matchesData = {
@@ -394,9 +385,9 @@ function initDefaultTeamsData() {
     };
 
     teamsData = {
-        FHN: { name: "Team FHN", members: createMembers("FHN") },
-        FDN: { name: "Team FĐN", members: createMembers("FDN") },
-        FSG: { name: "Team FSG", members: createMembers("FSG") }
+        FHN: { name: "Team FHN (Hà Nội)", members: createMembers("FHN") },
+        FDN: { name: "Team FĐN (Đà Nẵng)", members: createMembers("FDN") },
+        FSG: { name: "Team FSG (Sài Gòn)", members: createMembers("FSG") }
     };
 }
 
@@ -550,7 +541,6 @@ function renderTeamsAdminUI() {
     });
 }
 
-// CÔNG THỨC TÍNH ĐÔI THI ĐẤU CUỘN SÓNG
 function getCurrentWavePair(teamKey, waveIndex) {
     const team = teamsData[teamKey];
     if (!team || !team.members || team.members.length === 0) {
@@ -615,7 +605,7 @@ function renderMatchesUI() {
             <div class="match-header">${m.label}</div>
             ${controlHTML}
             <div class="wave-box">
-                <div class="wave-box-title">🏓 CẶP ĐÔI ĐANG RA SÂN (BLOCK HIỆN TẠI):</div>
+                <div class="wave-box-title">🏓 TRẬN ĐẤU:</div>
                 <div class="wave-line">• <b>${t1Name}:</b> <span class="wave-pair">${pair1}</span></div>
                 <div class="wave-line" style="margin-top: 6px;">• <b>${t2Name}:</b> <span class="wave-pair">${pair2}</span></div>
             </div>
