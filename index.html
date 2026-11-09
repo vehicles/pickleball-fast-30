@@ -394,9 +394,9 @@ function initDefaultTeamsData() {
     };
 
     teamsData = {
-        FHN: { name: "Team FHN (Hà Nội)", members: createMembers("FHN") },
-        FDN: { name: "Team FĐN (Đà Nẵng)", members: createMembers("FDN") },
-        FSG: { name: "Team FSG (Sài Gòn)", members: createMembers("FSG") }
+        FHN: { name: "Team FHN", members: createMembers("FHN") },
+        FDN: { name: "Team FĐN", members: createMembers("FDN") },
+        FSG: { name: "Team FSG", members: createMembers("FSG") }
     };
 }
 
@@ -413,7 +413,7 @@ function toggleAuthRole() {
         currentRole = 'guest';
         alert("🔒 Đã chuyển về giao diện Khán giả.");
     } else {
-        const pin = prompt("Nhập mã PIN (BTC: 1997 | Trọng tài: 1234):");
+        const pin = prompt("Nhập mã:");
         if (pin === PIN_BTC) {
             currentRole = 'btc';
             alert("👑 Đã đăng nhập vai trò BAN TỔ CHỨC!");
