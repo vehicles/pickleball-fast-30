@@ -89,7 +89,7 @@
         .header-container { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; border-bottom: 2px solid #eef7fc; padding-bottom: 10px; }
         .header-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
         
-        /* XỬ LÝ LOGO RESPONSIVE CHUẨN XÁC KHÔNG BỊ HIỆN CẢ HAI */
+        /* LOGO RESPONSIVE */
         .logo-container img {
             object-fit: contain;
             display: block;
@@ -133,36 +133,39 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        /* BẢNG VINH DANH (PODIUM) */
+        /* KHẮC PHỤC LỖI GIAO DIỆN BẢNG VINH DANH (PODIUM) */
         .podium-container {
             display: flex;
             justify-content: center;
-            align-items: flex-end;
-            gap: 10px;
-            margin: 12px 0 16px 0;
-            padding: 10px;
+            align-items: stretch;
+            gap: 15px;
+            margin: 15px 0 20px 0;
+            padding: 15px;
             background: #F2EFE9;
             border: 1px solid #E2DDD5;
             border-radius: 12px;
+            flex-wrap: wrap;
         }
         .podium-card {
             flex: 1;
-            max-width: 0px;
+            min-width: 160px;
+            max-width: 260px;
             display: flex;
             flex-direction: column;
             align-items: center;
             border-radius: 10px;
-            padding: 10px 6px;
+            padding: 14px 10px;
             text-align: center;
             background: #FFFFFF;
             border: 1px solid var(--border-color);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
         }
-        .podium-rank { font-size: 20px; margin-bottom: 2px; }
-        .podium-1 { order: 2; border: 2px solid #F59E0B; transform: scale(1.03); }
+        .podium-rank { font-size: 26px; margin-bottom: 4px; }
+        .podium-1 { order: 2; border: 2px solid #F59E0B; transform: scale(1.02); background: #FFFDF9; }
         .podium-2 { order: 1; border: 2px solid #94A3B8; }
         .podium-3 { order: 3; border: 2px solid #D97706; }
-        .podium-name { font-weight: 700; font-size: 12px; color: var(--text-main); margin-top: 2px; }
-        .podium-score { font-size: 10px; color: var(--text-muted); margin-top: 2px; font-weight: 600; }
+        .podium-name { font-weight: 800; font-size: 14px; color: var(--text-main); margin-top: 4px; word-break: break-word; }
+        .podium-score { font-size: 12px; color: var(--text-muted); margin-top: 4px; font-weight: 600; }
 
         /* KHU VỰC BTC SETUP ĐỘNG */
         .btc-panel {
@@ -182,8 +185,8 @@
         }
         .team-title { font-weight: 700; color: var(--fast-primary); font-size: 14px; margin-bottom: 6px; }
 
-        table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 4px; }
-        th, td { border: 1px solid var(--border-color); padding: 5px 3px; text-align: center; color: var(--text-main); }
+        table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; }
+        th, td { border: 1px solid var(--border-color); padding: 8px 6px; text-align: center; color: var(--text-main); }
         th { background: #F1F5F9; color: var(--fast-dark); font-weight: 700; }
 
         .player-input { width: 95%; padding: 3px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 11px; }
@@ -191,21 +194,21 @@
         /* MATCH CARD & THỂ THỨC MLP */
         .match-card {
             border: 1px solid #D1D5DB; background: #FFFFFF;
-            padding: 14px; border-radius: 12px; text-align: center; margin-bottom: 16px;
+            padding: 16px; border-radius: 12px; text-align: center; margin-bottom: 16px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.04);
         }
-        .match-header { font-weight: 800; font-size: 14px; color: var(--fast-dark); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .match-header { font-weight: 800; font-size: 15px; color: var(--fast-dark); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
         
-        .score-control { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 12px 0; }
-        .btn-step { width: 38px; height: 38px; font-size: 20px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .score-control { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 12px 0; }
+        .btn-step { width: 40px; height: 40px; font-size: 20px; font-weight: bold; border-radius: 8px; border: none; cursor: pointer; color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .btn-minus { background: #EF4444; }
         .btn-plus { background: #10B981; }
-        .score-display { width: 55px; height: 38px; font-size: 22px; font-weight: bold; text-align: center; background: #F8FAFC; border: 2px solid var(--fast-primary); border-radius: 8px; color: var(--fast-dark); }
+        .score-display { width: 60px; height: 40px; font-size: 24px; font-weight: bold; text-align: center; background: #F8FAFC; border: 2px solid var(--fast-primary); border-radius: 8px; color: var(--fast-dark); }
 
         .wave-box {
             background: linear-gradient(135deg, #F2EFE9 0%, #E8E2D5 100%);
             border: 1px solid #DCD6CD;
-            padding: 12px; 
+            padding: 14px; 
             border-radius: 10px; 
             margin-top: 12px;
             text-align: left;
@@ -214,31 +217,30 @@
             font-size: 12px; font-weight: 800; color: #1E293B; margin-bottom: 6px;
             display: flex; align-items: center; gap: 6px; text-transform: uppercase;
         }
-        .wave-line { font-size: 13px; padding: 3px 0; color: #334155; word-break: break-word; }
+        .wave-line { font-size: 14px; padding: 4px 0; color: #334155; word-break: break-word; }
         .wave-pair { 
             font-weight: 800; color: var(--fast-primary); background: #FFFFFF;
-            padding: 2px 6px; border-radius: 4px; border: 1px solid #CBD5E1;
+            padding: 3px 10px; border-radius: 4px; border: 1px solid #CBD5E1;
             display: inline-block; margin-top: 2px;
         }
 
-        /* KHUNG THỂ THỨC TỐI ƯU GIAO DIỆN MOBILE */
         .rules-card-enhanced {
             background: linear-gradient(135deg, #EAE6DF 0%, #DFD9CE 100%);
             border: 2px solid var(--fast-primary);
-            padding: 14px; border-radius: 12px; margin-top: 16px;
+            padding: 16px; border-radius: 12px; margin-top: 16px;
             color: #1E293B; box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
         .rules-title {
-            font-size: 14px; font-weight: 900; color: var(--fast-dark); margin-bottom: 10px;
+            font-size: 15px; font-weight: 900; color: var(--fast-dark); margin-bottom: 10px;
             display: flex; align-items: center; gap: 6px; text-transform: uppercase;
         }
-        .rules-list { display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 1.5; font-weight: 600; }
+        .rules-list { display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5; font-weight: 600; }
         .rules-item { display: flex; align-items: flex-start; gap: 6px; }
         .rules-item span { color: var(--fast-primary); font-weight: bold; flex-shrink: 0; }
 
-        .winner-tag { background: #10B981; color: white; font-weight: 800; padding: 6px; border-radius: 6px; font-size: 13px; margin-top: 10px; box-shadow: 0 2px 5px rgba(16,185,129,0.2); }
+        .winner-tag { background: #10B981; color: white; font-weight: 800; padding: 8px; border-radius: 6px; font-size: 14px; margin-top: 10px; box-shadow: 0 2px 5px rgba(16,185,129,0.2); }
 
-        /* ĐIỀU CHỈNH RESPONSIVE RIÊNG CHO ĐIỆN THOẠI (≤ 768px) */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             body { padding: 4px; }
             .container { padding: 10px; border-radius: 8px; }
@@ -247,11 +249,13 @@
             .header-title h1 { font-size: 13px; white-space: normal; }
             .header-title .subtitle { font-size: 11px; }
             .header-title .info { font-size: 9px; }
-            .rules-card-enhanced { padding: 10px; }
+            .rules-card-enhanced { padding: 12px; }
             .rules-list { font-size: 12px; }
             .btc-config-row { flex-direction: column; align-items: flex-start; }
             .score-display { width: 48px; height: 35px; font-size: 18px; }
             .btn-step { width: 35px; height: 35px; font-size: 18px; }
+            .podium-card { min-width: 100px; padding: 10px 4px; }
+            .podium-name { font-size: 11px; }
         }
     </style>
 </head>
@@ -260,8 +264,11 @@
 <div class="container">
     <div class="header-container">
         <div class="header-left">            
-            <!-- KHU VỰC LOGO (TỰ ĐỘNG HIỆN ĐÚNG TRÊN MÁY TÍNH HOẶC ĐIỆN THOẠI) -->
-           
+            <!-- KHU VỰC LOGO -->
+            <div class="header-logo">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAATCAYAAAAgcwuHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAfZSURBVFhH1VhpbFRVFP7ezHS2lpa203VqW7qAbWmhFltkESlYRcUFRUUjajQY/eEPFTUqSoxL1BglUWMUo8EIJhCEEolIsXGvkYKiMdKAgtCN7sss7Wx+584bC6UMg9FEv8zre+/ec+89+zmvWojAP4zmvn4ccblwfY5TH/nvQvMF/CHHjp0wGwwYDgYxKqPjVBIIBHBb7nnYcGGVPhId2patwMgI/CtugpH7xoqB0VE8cOBnbG5rwxAVCLGNpgFmCxakOXDPlHzcfF4OOHIa3D4/4rfVwxBn4jwp+IvjeKLRqOYHKYPvJLkCvlF0XLUEWvvgUChrez1gMuH+7EwstlgwIhT62cKDn4rJT03B7GnT1OJoWN70HbYcOQpQ8OLERLRcXqfPRMcxjwe5m6k4MnxlWioecTiQarWg3+fD3qFhvN7VhRaPFztrqrGksEBfNQY/6bY2NyvlaGRchP81GMKjR/9Q849nZaHGRtk4JsL5KNO1lZXQOoeGQxn1OxTR15dcjDnZ2er572B3Zyfqdu8B7HYYqPEgmXp65gysKS3RKc6MnVTalV9+RbOZ8GJJKVbPKNdnwvD39mJ4aAiTc3KUkmLBPiqtSvghvli4APOphPEY809uuqGtHZuOH8e71Jpc75Cpbe3tOsHZUdf4OZCSguc/2Y1d770POFLx5P4f8IfLrVOcGVdkZuDVwimwW6x4+MABaFu34fa9zWjs6lbzJu47OS8vZuEFo4Gg/sRnZfnTMeYBcXHIMJuRajQgQL8Xcj8X5VqtaLzs0jB1FFR/1ojve/tQcqILvzzzvIqfW+66A5suqISJ7uZbdq1OGQV+P7z0oqYTJ7C5pxe7hl04TPdHKIiK7CysLSnBdc7YPbSpoxMXkS/BHnp37QTePaYAxuzHMytwBWNvhAwrFfCnMTdYUlN18onx9m+/Y9U33wLMH8yYY1aSZwOfA36sKCjAxpoLw+OxgAnRNziI7r4+fNB5AqvbOphYvbiAQjQvWqgTRUcsChgLAQptTJhEt3XAkp4Oa3oGrBkZZxXeRaut+qZJJdGVpP2+rASNU4vROK0Y35aej+ecjDt6w6aWFjRQkDPBTWU9++tB/Ng/EB6gN8aRl6ziYjw0by6WOlLU2L7W1vB8LJCMOLHn/wWtjR6Q/dF2RVx/8XwsZbk7F9i274CXJcvGUHEvrmXdSdRndLDcVH26B/toTVFy/403IInhNh5rmprwzKHDpPfDQQPcmZeLTO7Zx0S68dhx/MawEAWsz8/FXdXV+qro+Kq9E/MbGvikYVftJaibIHyMa9c8sbaV2bKMhy1j4+JISNCnzo6fGK8dTJLVCfF4g1Z3OidofBgOS2xW9FABFTYb2HlhOi07HrVpabhvchLKWUGMIx78MjCAr7l3W38/pjEH3JuVifVTC7GgtFSFaywIeD3o4fpynn81+wdHfLw+M4ZwJ+j1ht8khqX4xwqJcVpIrZG10cDGSPmj5IQJPOAUMP6D7AukCdEorEbjwCxrzoE3gTQx6lziDLL9K63w/wlKAfvpJodYckwTaEi0MxIMqFaZtggPRoGf7iolV+jPhnOhldJsIH/n6AMTYpS5aB57FKeEZKvLHXJu/HDMxQz6EeIYirEQZrGD2tvdA3jpThEOTi51ojhpOkhvZw7JZswdkozPnkKNs7s7hVY5nQYrc4eTtIdlbzmLFUXNsaKodaoOC0+cYwJU82Re3SPny5xs52coyrqIEZlM1bOJdBKmAgm9yBlcF7rtVhiODg1iZn4eHq2ciVVlpShJT0MhtXNdUSFM1JDJZscDRUUqlpZPLcKlpF3BhKcY4LWKbe4Ulr91c2bDnGDHG5UzkMN1i/jhUpmZiVc4rhjjtYx71rAWLy8ugo3Cv8UmqViSrghH5h7j+9usRHYmq7tZTlezja7Lz1cCvsk5q+QCxvJ60jiTk1HJxAgThaKQHy1eBBKE9yJfL86uxr3lZUru1+bOwbq5FymFyBlPzZqFzJRkuGhQMTHymHlN1MgBZt5kkxkrWYJWshz62cC8ML0MFs5VkfE0Hu6hFR+kAGELAfFGE5azvIgbx1NIuR8cHkYyGbmG3VuSCM8xsVwBBbuaTHdQmZMosJEMSehFrLaOZfCL7m64ub6GAr50sAW1NMj56Q6k88No3YwKRXfE7cLL5dNhFyMwPBdQ0R1M5Av5xag8hAor4lmtkkj5nkXFpIliaPkCezw62VB16sJrzV3doaoGfjBo8so4I2NBCq5RsBCFtXGhh+1oUlKialZ8PCiJmw/wy0zCQc273TDT6qN0tXJqdpD3Y24vgszmJouZXke3I6zc2+v2wJE4Cd1kroK0Q5z7fYA9giiBl5kKG+U66UCXUln1/CZR57GMWngfIb3G0FJRJNDDqoIKO849e/Xqkct+JJVhvb+nB0Z6SUAUQ8SxCvlYHmWd5/pl0PwuV2je7gb0MGZMjH8hE3vIAXKXdyMfAvq7pAj5RhBagYyH56k8UviY2CRViXVFJklyMi+QZ1kWSWjySSq0cfpeciZ/Og1Dl/MWChveQ+NYUK2Td9lbiIVW3uVcSeJCJ4h8/JhJEOadJZVzcoaff6pphI0Mm3AZlH8+6BpSOwuVvlEY4c1OxUl0p9ETMiaIjCsaufMaP3byXpGzxtMJxp/xF/T5U/YhIs/jzxFIaNps+BM8oDYM6lboFAAAAABJRU5ErkJggg==" alt="Logo FAST Pickleball Club">
+            </div>
+			
 
             <div class="header-title">
                 <div style="font-size: 10px; color: var(--text-muted); font-weight: 700;">FAST PICKLEBALL CLUB</div>
@@ -288,14 +295,14 @@
 
         <div class="rules-card-enhanced">
             <div class="rules-title">
-                <span>📋 ĐẶC SẢN THỂ THỨC M.L.P (MAJOR LEAGUE PICKLEBALL)</span>
+                <span>📋 ĐẶC SẢN THỂ THỨC M.L.P (MAJOR LEAGUE PICKLEBALL) CUỘN SÓNG</span>
             </div>
             <div class="rules-list">
                 <div class="rules-item">
                     <span>•</span> <strong>Vòng tròn tính điểm:</strong> 3 đội (FHN - FĐN - FSG) tranh tài trực tiếp trên 1 sân duy nhất, đảm bảo tính kịch tính từ trận đầu đến trận cuối.
                 </div>
                 <div class="rules-item">
-                    <span>•</span> <strong>Thể thức Cuộn sóng:</strong> Các cặp đôi (Nam / Nữ / Hỗn hợp) trong danh sách 18 VĐV sẽ liên tục xoay vòng theo thứ tự <strong>1-2 → 2-3 → 3-4 → ...</strong>
+                    <span>•</span> <strong>Thể thức Cuộn sóng:</strong> Các cặp đôi (Nam/Nữ/Hỗn hợp) trong danh sách 18 VĐV sẽ liên tục xoay vòng theo thứ tự <strong>1-2 → 2-3 → 3-4 → ...</strong>
                 </div>
                 <div class="rules-item">
                     <span>•</span> <strong>Đổi VĐV mỗi 5 điểm:</strong> Cứ đúng mốc tích lũy 5 điểm (5, 10, 15, 20...), hai đội bắt buộc phải thay người ngay lập tức theo đúng vòng cuốn chiếu.
@@ -327,7 +334,7 @@
             </div>
         </div>
 
-        <div class="section-title">👥 DANH SÁCH VĐV (18 VĐV/TEAM)</div>
+        <div class="section-title">👥 DANH SÁCH VĐV (18 VĐV / TEAM)</div>
         <div id="teamsAdminGrid" class="teams-grid"></div>
     </div>
 
@@ -388,9 +395,9 @@ function initDefaultTeamsData() {
     };
 
     teamsData = {
-        FHN: { name: "Team FHN", members: createMembers("FHN") },
-        FDN: { name: "Team FĐN", members: createMembers("FDN") },
-        FSG: { name: "Team FSG", members: createMembers("FSG") }
+        FHN: { name: "Team FHN (Hà Nội)", members: createMembers("FHN") },
+        FDN: { name: "Team FĐN (Đà Nẵng)", members: createMembers("FDN") },
+        FSG: { name: "Team FSG (Sài Gòn)", members: createMembers("FSG") }
     };
 }
 
@@ -716,19 +723,19 @@ function updateStandings() {
         podiumContainer.innerHTML = `
             <div class="podium-card podium-2">
                 <div class="podium-rank">🥈</div>
-                <div style="font-size: 10px; color:var(--text-muted); font-weight:bold;">Á QUÂN</div>
+                <div style="font-size: 11px; color:var(--text-muted); font-weight:bold;">Á QUÂN</div>
                 <div class="podium-name">${standingsArr[1] ? standingsArr[1].name : 'Team FĐN'}</div>
                 <div class="podium-score">${standingsArr[1] ? standingsArr[1].won : 0} Thắng | HS: ${standingsArr[1] ? (standingsArr[1].diff > 0 ? '+' + standingsArr[1].diff : standingsArr[1].diff) : 0}</div>
             </div>
             <div class="podium-card podium-1">
                 <div class="podium-rank">🥇</div>
-                <div style="font-size: 12px; color:var(--fast-orange); font-weight:bold;">VÔ ĐỊCH</div>
+                <div style="font-size: 11px; color:var(--fast-orange); font-weight:bold;">VÔ ĐỊCH</div>
                 <div class="podium-name">${standingsArr[0] ? standingsArr[0].name : 'Team FHN'}</div>
                 <div class="podium-score">${standingsArr[0] ? standingsArr[0].won : 0} Thắng | HS: ${standingsArr[0] ? (standingsArr[0].diff > 0 ? '+' + standingsArr[0].diff : standingsArr[0].diff) : 0}</div>
             </div>
             <div class="podium-card podium-3">
                 <div class="podium-rank">🥉</div>
-                <div style="font-size: 10px; color:#D97706; font-weight:bold;">HẠNG BA</div>
+                <div style="font-size: 11px; color:#D97706; font-weight:bold;">HẠNG BA</div>
                 <div class="podium-name">${standingsArr[2] ? standingsArr[2].name : 'Team FSG'}</div>
                 <div class="podium-score">${standingsArr[2] ? standingsArr[2].won : 0} Thắng | HS: ${standingsArr[2] ? (standingsArr[2].diff > 0 ? '+' + standingsArr[2].diff : standingsArr[2].diff) : 0}</div>
             </div>
