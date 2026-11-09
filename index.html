@@ -34,7 +34,7 @@
             } else {
                 initDefaultMatches();
             }
-            tchesUI();
+            renderMatchesUI();
             updateStandings();
         });
 
@@ -50,7 +50,7 @@
                 initDefaultTeamsData();
             }
             renderTeamsAdminUI();
-            tchesUI();
+            renderMatchesUI();
             updateStandings();
         });
     </script>
@@ -440,7 +440,7 @@ function updateAccessUI() {
     btcEls.forEach(el => el.style.display = (currentRole === 'btc') ? '' : 'none');
 
     renderTeamsAdminUI();
-    tchesUI();
+    renderMatchesUI();
 }
 
 function switchTab(tab) {
@@ -482,7 +482,7 @@ function updateDynamicConfig() {
     });
 
     renderTeamsAdminUI();
-    tchesUI();
+    renderMatchesUI();
 }
 
 function saveConfigToFirebase() {
@@ -502,7 +502,7 @@ function updateMemberName(tKey, idx, newName) {
     if (teamsData[tKey] && teamsData[tKey].members[idx]) {
         teamsData[tKey].members[idx].name = newName.trim();
     }
-    tchesUI();
+    renderMatchesUI();
 }
 
 function renderTeamsAdminUI() {
