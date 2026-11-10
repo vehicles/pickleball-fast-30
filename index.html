@@ -572,15 +572,14 @@
                                 <span><i class="fa-solid fa-wave-square mr-1 text-teal-600"></i> Đang thi đấu trên sân (Tổng điểm: ${totalPoints})</span>
                                 
                             </div>
-                            <div class="grid grid-cols-2 gap-2">
-                                <div class="text-blue-800 font-semibold truncate">
-                                    <span class="text-gray-400">${m.t1}:</span> ${pair1.p1.name} & ${pair1.p2.name}
-                                </div>
-								</br>
-                                <div class="text-emerald-800 font-semibold truncate text-right">
-                                    <span class="text-gray-400">${m.t2}:</span> ${pair2.p1.name} & ${pair2.p2.name}
-                                </div>
-                            </div>
+                            <div class="space-y-1 overflow-x-auto">
+								<div class="text-blue-800 font-semibold text-xs whitespace-nowrap">
+									<span class="text-gray-400">${m.t1}:</span> ${pair1.p1.name} & ${pair1.p2.name}
+								</div>
+								<div class="text-emerald-800 font-semibold text-xs whitespace-nowrap">
+									<span class="text-gray-400">${m.t2}:</span> ${pair2.p1.name} & ${pair2.p2.name}
+								</div>
+							</div>
                         </div>
 
                         <!-- Tỷ số -->
