@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAST - Điều Hành Giải Đấu</title>
+    <title>FAST Pickleball Club - Điều Hành Giải Đấu</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome Icons -->
@@ -570,12 +570,13 @@
                         <div class="bg-white p-3 rounded-xl border space-y-2 text-xs shadow-inner">
                             <div class="flex justify-between items-center text-[11px] text-gray-500 font-bold border-b pb-1">
                                 <span><i class="fa-solid fa-wave-square mr-1 text-teal-600"></i> Đang thi đấu trên sân (Tổng điểm: ${totalPoints})</span>
-                                <span class="text-teal-700">Bước sóng: +${waveInterval}đ</span>
+                                
                             </div>
                             <div class="grid grid-cols-2 gap-2">
                                 <div class="text-blue-800 font-semibold truncate">
                                     <span class="text-gray-400">${m.t1}:</span> ${pair1.p1.name} & ${pair1.p2.name}
                                 </div>
+								</br>
                                 <div class="text-emerald-800 font-semibold truncate text-right">
                                     <span class="text-gray-400">${m.t2}:</span> ${pair2.p1.name} & ${pair2.p2.name}
                                 </div>
